@@ -23,7 +23,7 @@ apt = env.ApartmentEnv(T, K)
 p_random: p.RandomPolicy = p.RandomPolicy(T)
 p_optimal: p.OptimalPolicy = p.OptimalPolicy(table)
 
-def run(policy, track, apt: env.ApartmentEnv):
+def run(policy, track):
     for i in range(N):
         obs = apt.reset()[0]
         terminated = False
@@ -47,7 +47,7 @@ def run(policy, track, apt: env.ApartmentEnv):
             if i == T - 1:
                 track.append(0)
 
-def run_t(apt: env.ApartmentEnv) -> np.array:
+def run_t() -> np.array:
     u_min: list = [1, 2, 3, 4]
     threshold: list = []
     max_mean: float = 0
